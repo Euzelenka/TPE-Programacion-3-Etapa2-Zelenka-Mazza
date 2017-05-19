@@ -48,10 +48,10 @@ public class ListaArreglo {
 					result = true;
 				}
 				else if(id < arr[medio].getId()) {
-						fin = medio;
+						fin = medio - 1;
 				}
 				else if(id > arr[medio].getId()) {
-					inicio = medio;
+					inicio = medio + 1;
 				}
 			}
 		}
