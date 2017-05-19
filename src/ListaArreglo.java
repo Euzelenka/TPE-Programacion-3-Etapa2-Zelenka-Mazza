@@ -35,6 +35,29 @@ public class ListaArreglo {
 		return null;
 	}
 	
+	//BUSQUEDA DE UN ELEMENTO UTILIZANDO DIVIDE Y CONQUISTA
+	public boolean busquedaDyC(int id) {
+		boolean result = false;
+		if(cantidad > 0) {
+			int inicio = 0;
+			int fin = cantidad - 1;
+			int medio = 0;
+			while((!result) && (inicio != fin)) {
+				medio = (fin + inicio) / 2;
+				if(arr[medio].getId() == id) {
+					result = true;
+				}
+				else if(id < arr[medio].getId()) {
+						fin = medio;
+				}
+				else if(id > arr[medio].getId()) {
+					inicio = medio;
+				}
+			}
+		}
+		return result;
+	}
+	
 	public void merge(int izq, int medio, int der) {
 		int i = 0, j = 0, k = 0;
 		Usuario [] aux = new Usuario[cantidad];
@@ -45,8 +68,10 @@ public class ListaArreglo {
 			i = izq;
 			j = medio + 1;
 			k = izq;
-			
+
+				
 			while(i <= medio && j <= der) {
+											
 				if(aux[i].getId() <= aux[j].getId()) {   
 					arr[k] = aux[i];
 					i++;
@@ -65,10 +90,6 @@ public class ListaArreglo {
 	}
 	
 	
-	public void ordenar() {
-		mergeSort(0,cantidad-1);
-	}
-	
 	private void mergeSort(int izq, int der) {
 		if(izq < der) {
 			int medio = (izq + der) / 2;
@@ -76,6 +97,10 @@ public class ListaArreglo {
 			mergeSort(medio+1,der);
 			merge(izq,medio,der);
 		}
+	}
+	
+	public void ordenar() {
+		mergeSort(0,cantidad-1);
 	}
 	
 	public void agregar(Usuario u){
