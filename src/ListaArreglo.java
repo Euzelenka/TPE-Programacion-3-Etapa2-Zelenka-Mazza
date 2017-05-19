@@ -38,12 +38,15 @@ public class ListaArreglo {
 	//BUSQUEDA DE UN ELEMENTO UTILIZANDO DIVIDE Y CONQUISTA
 	public boolean busquedaDyC(int id) {
 		boolean result = false;
+		
 		if(cantidad > 0) {
+			
 			int inicio = 0;
 			int fin = cantidad - 1;
 			int medio = 0;
-			while((!result) && (inicio != fin)) {
-				medio = (fin + inicio) / 2;
+			medio = (fin + inicio) / 2;
+			while((!result) && (inicio <= fin)) {
+				
 				if(arr[medio].getId() == id) {
 					result = true;
 				}
@@ -53,6 +56,7 @@ public class ListaArreglo {
 				else if(id > arr[medio].getId()) {
 					inicio = medio + 1;
 				}
+				medio = (fin + inicio) / 2;
 			}
 		}
 		return result;

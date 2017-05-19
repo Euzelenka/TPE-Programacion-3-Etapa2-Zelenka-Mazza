@@ -136,7 +136,7 @@ public class CentroDeOperaciones {
 			int x=0;
 			while ((line = br.readLine()) != null) {
 				x++;
-				if(x == 100000 || x==250000 || x== 350000 || x==450000)
+				
 					System.out.println(x);
 				String[] metricas = new String[3];
 
@@ -216,6 +216,18 @@ public class CentroDeOperaciones {
 		centro.insertar("C:/Users/Euyi/Desktop/datasets/dataset_insert_10000.csv", 500000);
 		centro.busquedaUsuarios("C:/Users/Euyi/Desktop/datasets/dataset_busqueda_10000.csv", 500000);
 
+		/*ListaArreglo usuarios = new ListaArreglo();
+		
+
+		
+		for (int i = 0; i < 100; i++) {
+			Usuario u = new Usuario(i); 
+			usuarios.agregar(u);
+		}
+		//usuarios.imprimir();
+		for (int i = 101; i < 200; i++) {
+			System.out.println(usuarios.busquedaDyC(i)+"numero"+i);
+		} */
 	}
 
 }
