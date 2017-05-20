@@ -1,5 +1,5 @@
 
-public class Usuario implements Comparable<Usuario>{
+public class Usuario {
 	
 	int id;
 	String[] gustos;
@@ -55,9 +55,4 @@ public class Usuario implements Comparable<Usuario>{
 		this.gustos = gustos;
 	}
 
-	@Override
-	public int compareTo(Usuario u) {
-		int valor = this.getId() - u.getId();
-		return valor == 0 ? 0 : (valor > 0 ? 1 : -1);
-	}
 }

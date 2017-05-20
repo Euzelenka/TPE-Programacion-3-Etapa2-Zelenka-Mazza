@@ -21,13 +21,11 @@ public class CentroDeOperaciones {
 
 			Usuario u;
 			int id;
-			//int x = 0;
-			//boolean limiteAlcanzado = false;
 			
 			br.readLine(); //PARA EVITAR TOMAR LA PRIMER LINEA DEL ARCHIVO
 
-			while ((line = br.readLine()) != null ) {
-
+			while ((line = br.readLine()) != null) {
+				
 				items = line.split(cvsSplitBy);
 				id = Integer.parseInt(items[0]);
 				u = new Usuario(id);
@@ -64,8 +62,7 @@ public class CentroDeOperaciones {
 			while ((line = br.readLine()) != null) {
 				
 				items = line.split(cvsSplitBy);
-
-					            	 
+	            	 
 				id = Integer.parseInt(items[0]);
 				u = new Usuario(id);
 
@@ -94,7 +91,7 @@ public class CentroDeOperaciones {
 
 		BufferedWriter bw = null;
 		try {
-			File file = new File("C:/Users/Euyi/Desktop/Datasets/salida-app1/salidaOrdenarEn"+ cantPrecarga + ".csv");
+			File file = new File("C:/Users/Eloy/Desktop/TPE-Programacion-3-Etapa2-Zelenka-Mazza/salida-app1/salidaOrdenarEn"+ cantPrecarga + ".csv");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
@@ -134,10 +131,16 @@ public class CentroDeOperaciones {
 				
 			int id;
 			int x=0;
+			System.out.println("empezo a buscar");
+			
 			while ((line = br.readLine()) != null) {
+				
+				
 				x++;
 				
-					System.out.println(x);
+				if(x== 1000000 || x == 200000 || (x < 10000))
+				System.out.println(x);
+				
 				String[] metricas = new String[3];
 
 				items = line.split(cvsSplitBy);
@@ -169,7 +172,7 @@ public class CentroDeOperaciones {
 	public void salidaBusqueda(ArrayList<String[] > listaSalidaBusqueda, int cantPrecarga) {
 		BufferedWriter bw = null;
 		try {
-			File file = new File("C:/Users/Euyi/Desktop/Datasets/salida-app1/salidaBusquedaEn"+ cantPrecarga + ".csv");
+			File file = new File("C:/Users/Eloy/Desktop/TPE-Programacion-3-Etapa2-Zelenka-Mazza/salida-app1/salidaBusquedaEn"+ cantPrecarga + ".csv");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
@@ -204,30 +207,18 @@ public class CentroDeOperaciones {
 
 		CentroDeOperaciones centro = new CentroDeOperaciones();
 
-		//centro.precarga("C:/Users/Eloy/Desktop/datasets/dataset_3000000.csv");
-		//centro.insertar("C:/Users/Eloy/Desktop/datasets/dataset_insert_10000.csv", 2000000);
-		//centro.busquedaUsuarios("C:/Users/Eloy/Desktop/datasets/dataset_busqueda_10000.csv", 2000000);
+		centro.precarga("C:/Users/Eloy/Desktop/datasets/dataset_3000000.csv");
+		centro.insertar("C:/Users/Eloy/Desktop/datasets/dataset_insert_10000.csv", 2000000);
+		centro.busquedaUsuarios("C:/Users/Eloy/Desktop/datasets/dataset_busqueda_10000.csv", 2000000);
 
 		//centro.precarga("C:/Users/Eloy/Desktop/datasets/dataset_1000000.csv");
-		//centro.busquedaUsuarios("C:/Users/Eloy/Desktop/datasets/dataset_insert_10000.csv", 1000000);
 		//centro.insertar("C:/Users/Eloy/Desktop/datasets/dataset_busqueda_10000.csv", 1000000);
+		//centro.busquedaUsuarios("C:/Users/Eloy/Desktop/datasets/dataset_insert_10000.csv", 1000000);
 
-		centro.precarga("C:/Users/Euyi/Desktop/datasets/dataset_500000.csv");
-		centro.insertar("C:/Users/Euyi/Desktop/datasets/dataset_insert_10000.csv", 500000);
-		centro.busquedaUsuarios("C:/Users/Euyi/Desktop/datasets/dataset_busqueda_10000.csv", 500000);
+		//centro.precarga("C:/Users/Eloy/Desktop/datasets/dataset_500000.csv");
+		//centro.insertar("C:/Users/Eloy/Desktop/datasets/dataset_insert_10000.csv", 500000);
+		//centro.busquedaUsuarios("C:/Users/Eloy/Desktop/datasets/dataset_busqueda_10000.csv", 500000);	
 
-		/*ListaArreglo usuarios = new ListaArreglo();
-		
-
-		
-		for (int i = 0; i < 100; i++) {
-			Usuario u = new Usuario(i); 
-			usuarios.agregar(u);
-		}
-		//usuarios.imprimir();
-		for (int i = 101; i < 200; i++) {
-			System.out.println(usuarios.busquedaDyC(i)+"numero"+i);
-		} */
 	}
 
 }
